@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Request for a Book </title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- <link rel="stylesheet" href="library.css"> -->
+  <style>
+    .slideshow-container {
+      width: 100%;
+      position: relative;
+      margin: auto;
+      background-size: cover;
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    big {
+      font-weight: bold;
+    }
+
+    #opac {
+      font-weight: bold;
+    }
+
+    .navbar-brand {
+      color: #fdfdfd;
+
+    }
+
+    .container-fluid {
+      background-color: #010304;
+
+    }
+
+    .nav-link {
+      color: #fdfdfd;
+    }
+
+    .nav-item :hover {
+      background-color: #28a745;
+      color: aliceblue;
+      border-radius: 4px;
+      transition: 975ms;
+      /* box-shadow: 2px 2px 13px red;*/
+      text-align: center;
+
+    }
+
+    /*
+        #home :hover{
+          background-color: #28a745;
+          color: aliceblue;
+          border-radius: 4px;
+          transition: 975ms;
+          box-shadow: 2px 2px 13px red;
+          text-align: center;
+        }
+        */
+    body {
+      background-color: #DAE7DD;
+    }
+  </style>
+
+</head>
+
+
+<body bgcolor="tan" link="blue" alink="red" vlink="green">
+
+  <!-- BootStrap for Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid" id="home">
+      <a class="navbar-brand" id="home" href="https://www.brainwareuniversity.ac.in/">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="accounts.html">Accounts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="result.html">Result</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://chat.openai.com/">ChatGPT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.google.com/">Google Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.wikipedia.org/">Wikipedia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact_us.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about_us.html">About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Login/Register
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="login.html">Login</a></li>
+              <li><a class="dropdown-item" href="register.html">Register</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- BootStrap Search Bar -->
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <!-- HTML Search bar to redirect to youtube -->
+        <!-- <form action="https://www.youtube.com/results?">
+          <label for="y">Youtube</label>
+          <input id="y" type="text" placeholder="Search On Youtube" name="search_query">
+          <button>search</button> -->
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="slideshow-container">
+    <div class="mySlides">
+      <img src="https://www.brainwareuniversity.ac.in/images/best-private-university-wb-iirf-ranked.webp?1701603061"
+        alt="404 Error">
+    </div>
+
+    <div class="mySlides">
+      <img src="https://www.brainwareuniversity.ac.in/images/awarded-best-private-university-execllence.webp?1701603061"
+        alt="404 Error">
+    </div>
+  </div>
+
+  <form name="f" id="myForm" action="library.php" method="POST">
+    <div class="container">
+      <h2 align="center" class="opac">ONLINE PUBLIC ACCESS CATALOGUE</h2>
+      <div class="request" align="center"><big>Request for a Book</big></div>
+      <div class="form-group">
+        <label for="studentCode"><b>Student Code :</b></label>
+        <input type="text" class="form-control" id="studentCode" placeholder="Enter Student ID" name="studentCode">
+      </div>
+
+      <div class="form-group">
+        <label for="password"><b>Password :</b></label>
+        <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password">
+      </div>
+
+      <div class="form-group">
+        <label for="department"><b>Department :</b></label>
+        <select name="department" class="form-control" id="department">
+          <option selected="selected">Select</option>
+          <optgroup label="Computational Science">
+            <option value="BSc CS">B.Sc in Computer Science (B.Sc CS)</option>
+            <option value="BCA">Bachelor of Computer Application (BCA) </option>
+            <option value="ANCS">Advance Network & Cyber Security (ANCS)</option>
+            <option value="BSc IT">B.Sc in Information Technology (B.Sc IT)</option>
+            <option value="MCA">Master of Computer Application (MCA)</option>
+            <option value="MSc IT">M.Sc in Information Technology (M.Sc IT)</option>
+          </optgroup>
+
+          <optgroup label="Computer Science Engineering">
+
+            <option value="B.Tech CSE AIML">B.Tech CSE Artificial Intelligence & Machine Learning (AIML)</option>
+            <option value="B.Tech CSE DS">B.Tech CSE Data Science (DS)</option>
+            <option value="B.Tech CSE RA">B.Tech CSE Robotics & Automation (RA)</option>
+            <option value="B.Tech CSE Core">B.Tech CSE Core CSE (CORE)</option>
+            <option value="M.Tech CSE">M.Tech CSE Artificial Intelligence & Machine Learning (AIML)</option>
+            <option value="M.Tech CSE DS">M.Tech CSE Data Science (DS)</option>
+          </optgroup>
+
+          <optgroup label="School Of Management">
+
+            <option value="BBA (H)">Bachelor of Buisness Administration(Hons.)</option>
+            <option value="BBA SCM">BBA Supply Chain Management</option>
+            <option value="BBA DM"> BBA Digital Marketing</option>
+            <option value="BBA HR"> BBA Human Resource Management</option>
+            <option value="B.Com">Bachelor of Comerce (B.Com)</option>
+            <option value="MBA">Master of Buisness Administration(MBA)</option>
+            <option value="M.Com">Master of Commerce(M.Com)</option>
+          </optgroup>
+
+
+          <optgroup label="Alied Health Science">
+
+            <option value="B.Pharm">Bachelor of Pharmacy (B.Pharm)</option>
+            <option value="D.Pharm">Diploma in Pharmacy (D.Pharm)</option>
+            <option value="BMLT">Bachelor of Medical Labratory Technology (BMLT)</option>
+            <option value="BSc Nurshing">B.Sc Nursing</option>
+            <option value="GNM Nurshing"> GNM Nursing</option>
+            <option value="BSc MRIT">B.Sc MRI Technology </option>
+            <option value="D. Pharm">Doctor of Pharmacy (D. Pharm)</option>
+            <option value="MMLT">Master in Medical Labratory Technology (MMLT)</option>
+          </optgroup>
+
+        </select>
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="log"><b>Library Catalog :</b></label>
+        <select name="log" class="form-control">
+          <option selected="selected">Select</option>
+          <optgroup label="Select any catalogue">
+            <option value="Title"> Tittle </option>
+            <option value="Author"> Author </option>
+            <option value="ISBN"> ISBN </option>
+            <option value="ISSN"> ISSN </option>
+            <option value="CALL"> Call Number </option>
+            <option value="Subject"> Subject </option>
+            <option value="Series"> Series </option>
+
+          </optgroup>
+
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="name"><b> Book Details :</b></label>
+        <input type="text" class="form-control" id="name" placeholder="Book Name /ISBN/ Author" name="name">
+      </div>
+
+      <!-- <div class="form-group">
+        <button type="button" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-success" onclick="resetForm()">Reset</button>
+      </div> -->
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-success" onclick="resetForm()">Reset</button>
+      </div>
+  </form>
+
+
+
+  </div>
+  </form>
+
+  <script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 2000); // Change slide every 2 seconds
+    }
+  </script>
+
+  <!-- Add your Bootstrap JS and Popper.js scripts here -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+  <script>
+    function resetForm() {
+      document.getElementById("myForm").reset();
+    }
+  </script>
+
+</body>
+
+</html>
